@@ -19,6 +19,14 @@ const client = new MongoClient(uri, {
   serverApi: ServerApiVersion.v1,
 });
 
+async function run() {
+  try {
+  } finally {
+  }
+}
+
+run().catch((err) => console.error(err));
+
 app.get("/", (req, res) => {
   res.send("Service project start");
 });
