@@ -44,6 +44,9 @@ async function run() {
       res.send(service);
     });
 
+    //reviews area
+
+    //get a specefic review
     app.get("/reviews/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
@@ -62,6 +65,17 @@ async function run() {
       const review = req.body;
       const result = await reviewCollection.insertOne(review);
       res.send(result);
+    });
+
+    //update reviews to db
+    app.put("/reviews/:id", async (req, res) => {
+      console.log(req);
+      // const id = req.params.id;
+      // console.log(id);
+      // const query = { _id: ObjectId(id) };
+      // const newReview = req.body;
+      // const result = await reviewCollection.updateOne(query, newReview);
+      // res.json(result);
     });
 
     app.delete("/reviews/:id", async (req, res) => {
